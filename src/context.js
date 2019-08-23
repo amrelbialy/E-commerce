@@ -81,7 +81,7 @@ export default  class ProductProvider extends Component {
         product.count = product.count - 1;
 
         if(product.count === 0){
-          this.removeItem(id)
+        this.removeItem(id)
         }else{
             product.total = product.count * product.price;
             
@@ -117,7 +117,7 @@ export default  class ProductProvider extends Component {
     }
     addTotals = ()=>{
     let subTotal = 0;
-    this.state.cart.map(item => {subTotal += item.total});
+    this.state.cart.map(item => { return subTotal += item.total});
     const tempTax = subTotal * 0.1;
     const tax = parseFloat(tempTax.toFixed(2));
     const total = subTotal + tax;
